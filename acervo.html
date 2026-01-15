@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acervo | P.A - Presença da Ausência</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; color: #114b6e; line-height: 1.6; }
+        
+        /* Navegação */
+        .nav-caldeira {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 25px 8%; background: #fff; position: fixed; width: 100%; top: 0; z-index: 1000;
+            box-sizing: border-box; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo-container { display: flex; align-items: center; font-weight: 900; color: #000; font-size: 1rem; text-transform: uppercase; }
+        .logo-img { height: 40px; margin-right: 15px; }
+        .nav-links a { text-decoration: none; color: #114b6e; font-weight: 700; margin-left: 25px; font-size: 0.75rem; text-transform: uppercase; }
+
+        /* INTRODUÇÃO (HERO) */
+        .intro-acervo { 
+            padding: 180px 8% 80px; 
+            background: #fff; 
+            text-align: left; 
+            max-width: 1000px; 
+        }
+        .intro-acervo h1 { font-size: 3.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; color: #114b6e; line-height: 1; }
+        .intro-acervo p { font-size: 1.2rem; color: #555; max-width: 800px; }
+
+        /* SEÇÃO POLTRONA (QUADRO PRETO E TEXTO AZUL/BRANCO) */
+        .destaque-acervo {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: #000; /* Fundo Preto */
+            padding: 100px 8%;
+        }
+        .destaque-acervo img { width: 100%; border-radius: 4px; }
+        .caixa-texto-poltrona {
+            padding: 40px;
+        }
+        .caixa-texto-poltrona span { color: #00ff00; font-weight: 900; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+        .caixa-texto-poltrona h2 { font-size: 3rem; margin-top: 15px; color: #fff; text-transform: uppercase; } /* Texto Branco */
+        .caixa-texto-poltrona p { font-size: 1.1rem; line-height: 1.8; margin-top: 20px; color: #4facfe; } /* Texto Azul (tom suave/neon) */
+
+        /* RELÍQUIAS DO AFETO */
+        .secao-acervo { padding: 80px 8%; background: #fff; }
+        .grid-objetos { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 40px; 
+            margin-top: 50px; 
+        }
+        .item-acervo {
+            background: #f9f9f9;
+            padding: 25px;
+            border-bottom: 4px solid #114b6e;
+            transition: 0.3s;
+        }
+        .item-acervo:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .item-acervo h3 { color: #114b6e; font-weight: 900; text-transform: uppercase; font-size: 1.1rem; }
+        .item-acervo p { font-size: 0.95rem; color: #555; margin-top: 10px; }
+
+        /* LUTO DA INFÂNCIA */
+        .secao-infancia { background: #f4f7f6; padding: 80px 8%; }
+        .box-luto-infancia {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #fff;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+        }
+        .texto-luto-infancia { padding: 60px; }
+        .quote-luto-infancia {
+            background: #114b6e;
+            color: white;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            font-size: 2rem;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        /* GRÉCIA E PERIFERIA */
+        .secao-detalhada { padding: 80px 8%; }
+        .grid-dois-lados { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .secao-detalhada img { width: 100%; border-radius: 8px; }
+        .destaque-periferia { background: #114b6e; color: white; padding: 40px; border-radius: 8px; border-left: 10px solid #00ff00; }
+
+        /* DIVISOR E INTERATIVO */
+        .divisor-fluxo { height: 2px; background: linear-gradient(to right, transparent, #114b6e, transparent); margin: 60px 8%; opacity: 0.2; }
+        .instalacao-interativa { padding: 80px 8%; }
+        .container-postit { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .pergunta-card { background: #114b6e; color: #00ff00; padding: 35px; border-radius: 4px; margin-top: 20px; }
+
+        footer { background: #114b6e; color: white; padding: 40px 8%; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-caldeira">
+        <div class="logo-container">
+            <img src="image/logo.png" alt="Logo" class="logo-img">
+            MUSEU : PRESENÇA DA AUSÊNCIA
+        </div>
+        <div class="nav-links">
+            <a href="index.html">O MUSEU</a>
+            <a href="luto_cultural.html">HISTÓRIAS DE AUSÊNCIA</a>
+            <a href="acervo.html">ACERVO</a>
+            <a href="apoio.html">APOIO</a>
+        </div>
+    </nav>
+
+    <main>
+        <header class="intro-acervo">
+            <h1>O Acervo do Invisível</h1>
+            <p>
+                As peças que compõem este museu não são apenas objetos; são âncoras de memória. Aqui, o valor não reside na raridade do material, mas na profundidade da falta que cada item representa.
+            </p>
+        </header>
+
+        <section class="destaque-acervo">
+            <img src="image/cadeira.png" alt="Poltrona Vazia">
+            <div class="caixa-texto-poltrona">
+                <span>Instalação Sensorial</span>
+                <h2>O Lugar da Falta</h2>
+                <p>
+                    Inspirada na canção de Nelson Gonçalves, esta poltrona simboliza a ausência de avôs e avós. É o lugar vazio na sala que permanece preenchido por histórias e pelo som da saudade.
+                </p>
+            </div>
+        </section>
+
+        <section class="secao-acervo">
+            <h2 style="font-weight: 900; color: #114b6e; text-align: center; font-size: 2.5rem; text-transform: uppercase;">Relíquias do Afeto</h2>
+            <div class="grid-objetos">
+                <article class="item-acervo">
+                    <h3>Cavalinho de Madeira</h3>
+                    <p>Brinquedo do tio-avô Hércules. Um movimento que atravessa gerações.</p>
+                </article>
+                <article class="item-acervo">
+                    <h3>Mini Tigre de Pelúcia</h3>
+                    <p>Um presente de 2021 que registrou uma moça marcante em sua vida.</p>
+                </article>
+                <article class="item-acervo">
+                    <h3>Colar de Madeira</h3>
+                    <p>Herança de avó para mãe, usado no pulso como um elo constante de carinho.</p>
+                </article>
+                <article class="item-acervo">
+                    <h3>Banquinho de Reuso</h3>
+                    <p>Feito pelo pai, transformando madeira reaproveitável em suporte para o descanso.</p>
+                </article>
+                <article class="item-acervo">
+                    <h3>A Forma de Pudim</h3>
+                    <p>A receita que reunia a família e o gosto da saudade de um último encontro com a avó.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="secao-infancia">
+            <div class="box-luto-infancia">
+                <div class="texto-luto-infancia">
+                    <span style="color: #114b6e; font-weight: 900; text-transform: uppercase; font-size: 0.7rem;">Reflexão Educativa</span>
+                    <h2 style="font-weight: 900; color: #114b6e; margin: 15px 0; font-size: 2.2rem;">O Luto da Infância</h2>
+                    <p>Crescer exige deixar versões de nós mesmos para trás, um processo de transformação onde nada realmente acaba, tudo se transforma. No Brasil, essa passagem é banhada pela saudade.</p>
+                </div>
+                <div class="quote-luto-infancia">
+                    "Crescer também é uma forma de luto."
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-detalhada">
+            <div class="grid-dois-lados">
+                <img src="image/grecia.png" alt="Grécia Antiga">
+                <div class="conteudo-texto">
+                    <h2 style="font-weight: 900; color: #114b6e; text-transform: uppercase;">A Herança dos Antigos</h2>
+                    <p style="text-align: justify;">Na Grécia Antiga, crianças participavam de um rito simbólico oferecendo seus brinquedos à deusa Ártemis. A infância não desaparecia; ela era entregue para que o novo ciclo pudesse florescer.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-infancia" style="background-color: #fff;">
+            <div class="box-luto-infancia">
+                <div class="texto-luto-infancia">
+                    <h2 style="font-weight: 900; color: #114b6e; text-transform: uppercase;">O Olhar Brasileiro</h2>
+                    <p style="margin-bottom: 25px;">O brasileiro ritualiza a juventude com intensidade, mas muitas vezes esquece de validar o luto que mora no "deixar de ser criança".</p>
+                    <div style="border-left: 4px solid #00ff00; padding-left: 20px;">
+                        <h3 style="font-size: 1.1rem; color: #114b6e; text-transform: uppercase; margin-bottom: 5px;">Pote de Bolinhas de Gude</h3>
+                        <p style="font-style: italic; font-size: 0.9rem;">A infância guardada em vidro. O som das esferas que ecoa o tempo em que o luto ainda não tinha nome.</p>
+                    </div>
+                </div>
+                <div style="padding: 20px; background: #f4f7f6; height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <img src="image/gude.png" alt="Bolinhas de Gude" style="width: 80%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-detalhada" style="background-color: #f4f7f6;">
+            <div class="grid-dois-lados">
+                <img src="image/crianca.png" alt="Realidade">
+                <div class="destaque-periferia">
+                    <h2 style="text-transform: uppercase;">O Peso da Realidade</h2>
+                    <p>Nas periferias, a infância é frequentemente interrompida pela necessidade de trabalhar cedo. Aqui, o luto é pelo <strong>amadurecimento no susto</strong>.</p>
+                    <p style="margin-top: 20px;"><a href="https://www.planalto.gov.br/ccivil_03/leis/l8069.htm" target="_blank" style="color: #00ff00; font-weight: 900;">CONSULTAR ECA →</a></p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divisor-fluxo"></div>
+
+        <section class="instalacao-interativa">
+            <div class="container-postit">
+                <img src="image/postit.png" alt="Instalação Interativa" style="width: 100%; border-radius: 8px;">
+                <div>
+                    <h2 style="font-weight: 900; color: #114b6e; font-size: 2.5rem; text-transform: uppercase;">Faça a flor crescer</h2>
+                    <p style="font-size: 1.2rem; color: #333;">Dê o seu significado ao luto e leve essa experiência para o lado pessoal.</p>
+                    <div class="pergunta-card">
+                        <h4 style="margin: 0; text-transform: uppercase;">Qual palavra floresce em você hoje?</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Museu Presença da Ausência - Onde o silêncio também é acervo.</p>
+    </footer>
+
+</body>
+</html>

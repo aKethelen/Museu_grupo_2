@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luto Coletivo & Cultural | P.A</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos da Grade de Rolagem Horizontal */
+        .grid-luto {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 40px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #00ff00 #114b6e;
+        }
+        .grid-luto::-webkit-scrollbar { height: 8px; }
+        .grid-luto::-webkit-scrollbar-thumb { background: #00ff00; border-radius: 10px; }
+
+        .bloco-luto {
+            flex: 0 0 380px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .bloco-luto:hover { transform: translateY(-10px); }
+        .bloco-luto img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 4px;
+            filter: grayscale(100%);
+            transition: 0.5s;
+        }
+        .bloco-luto:hover img { filter: grayscale(0%); }
+
+        .tag-categoria {
+            font-size: 0.7rem;
+            font-weight: 900;
+            background: #114b6e;
+            color: #00ff00;
+            padding: 4px 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .texto-extra {
+            display: none;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #444;
+            line-height: 1.6;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .btn-leia-mais {
+            background: none;
+            border: 1px solid #114b6e;
+            color: #114b6e;
+            font-weight: 900;
+            cursor: pointer;
+            padding: 10px;
+            margin-top: auto;
+            font-size: 0.75rem;
+        }
+
+        .sessao-cultura {
+            padding: 80px 8%;
+        }
+        .sessao-cultura img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-caldeira">
+    <div class="logo-container">
+        <img src="image/logo.png" alt="Logo" class="logo-img">
+        MUSEU : PRESENÇA DA AUSÊNCIA
+    </div>
+    <div class="nav-links">
+        <a href="index.html">O MUSEU</a>
+        <a href="luto_cultural.html">HISTÓRIAS DE AUSÊNCIA</a>
+        <a href="acervo.html">ACERVO</a>
+        <a href="apoio.html" onclick="window.location.href='apoio.html';">APOIO</a>
+    </div>
+</nav>
+
+    <main style="padding: 60px 0 0 0;">
+        <div style="padding: 0 8%;">
+            <h1 style="font-size: 3.5rem; font-weight: 900; color: #114b6e;">GALERIA DAS AUSÊNCIAS</h1>
+            <p style="max-width: 700px; line-height: 1.6;">Explore a cronologia do luto coletivo e como a partida de grandes figuras moldou nossa identidade.</p>
+        </div>
+
+        <section class="grid-luto" style="padding-left: 8%;">
+            
+            <article class="bloco-luto">
+                <span class="tag-categoria">Nacional</span>
+                <img src="image/airton.png" alt="Ayrton Senna">
+                <h3 style="margin-top: 15px;">AYRTON SENNA</h3>
+                <p>O herói das manhãs de domingo. Sua morte em 1994 parou o Brasil em um luto nacional sem precedentes.</p>
+                <div class="texto-extra" id="ex-ayrton">
+                    Senna era o símbolo de vitória e orgulho para um Brasil em crise. Representava a garra e a esperança de que poderíamos ser os melhores do mundo.
+                </div>
+                <button class="btn-leia-mais" onclick="toggleT('ex-ayrton', this)">+ Leia mais</button>
+            </article>
+
+            <article class="bloco-luto">
+                <span class="tag-categoria">Nacional</span>
+                <img src="image/pele.png" alt="Pelé">
+                <h3 style="margin-top: 15px;">PELÉ</h3>
+                <p>O Rei do Futebol. A despedida da figura que levou o nome do Brasil ao topo do mundo.</p>
+                <div class="texto-extra" id="ex-pele">
+                    A morte do Rei em 2022 foi a despedida da finitude do que parecia eterno. O mundo chorou o fim de uma era de genialidade esportiva.
+                </div>
+                <button class="btn-leia-mais" onclick="toggleT('ex-pele', this)">+ Leia mais</button>
+            </article>
+
+            <article class="bloco-luto">
+                <span class="tag-categoria">Nacional</span>
+                <img src="image/marilia.png" alt="Marília Mendonça">
+                <h3 style="margin-top: 15px;">MARÍLIA MENDONÇA</h3>
+                <p>A rainha da sofrência. Uma perda precoce que uniu o Brasil em uma dor familiar e profunda.</p>
+                <div class="texto-extra" id="ex-marilia">
+                    Marília deu voz aos sentimentos reais. Sua partida em 2021 transformou seus versos em um hino de resistência emocional e saudade coletiva.
+                </div>
+                <button class="btn-leia-mais" onclick="toggleT('ex-marilia', this)">+ Leia mais</button>
+            </article>
+
+            <article class="bloco-luto">
+                <span class="tag-categoria">Nacional</span>
+                <img src="image/mariele.png" alt="Marielle Franco">
+                <h3 style="margin-top: 15px;">MARIELLE FRANCO</h3>
+                <p>A ausência que se tornou resistência. O luto por Marielle rompeu silêncios e ocupou as ruas.</p>
+                <div class="texto-extra" id="ex-mariele">
+                    Sua morte em 2018 gerou um luto que se transformou em movimento. A ausência física deu lugar a uma presença política onipresente.
+                </div>
+                <button class="btn-leia-mais" onclick="toggleT('ex-mariele', this)">+ Leia mais</button>
+            </article>
+
+            <article class="bloco-luto">
+                <span class="tag-categoria">Internacional</span>
+                <img src="image/diana.png" alt="Princesa Diana">
+                <h3 style="margin-top: 15px;">PRINCESA DIANA</h3>
+                <p>A Princesa do Povo. Uma dor que atravessou oceanos e conectou o mundo pela empatia.</p>
+                <div class="texto-extra" id="ex-diana">
+                    Diana rompeu protocolos reais para se conectar com o público. Seu falecimento em 1997 causou uma comoção global inesquecível.
+                </div>
+                <button class="btn-leia-mais" onclick="toggleT('ex-diana', this)">+ Leia mais</button>
+            </article>
+
+            <article class="bloco-luto">
+                <span class="tag-categoria">Internacional</span>
+                <img src="image/jackson.png" alt="Michael Jackson">
+                <h3 style="margin-top: 15px;">MICHAEL JACKSON</h3>
+                <p>O Rei do Pop. Sua partida súbita paralisou a cultura pop mundial em 2009.</p>
+                <div class="texto-extra" id="ex-jackson">
+                    Michael revolucionou o entretenimento. Sua morte uniu fãs de todas as gerações em um reconhecimento global de sua genialidade.
+                </div>
+                <button class="btn-leia-mais" onclick="toggleT('ex-jackson', this)">+ Leia mais</button>
+            </article>
+
+            <article class="bloco-luto">
+                <span class="tag-categoria">Nacional</span>
+                <img src="image/paulo.png" alt="Paulo Gustavo">
+                <h3 style="margin-top: 15px;">PAULO GUSTAVO</h3>
+                <p>O riso interrompido. Paulo tornou-se o rosto humano da tragédia da pandemia no Brasil.</p>
+                <div class="texto-extra" id="ex-paulo">
+                    Sua morte em 2021 pela COVID-19 chocou o país que via nele alegria e afeto familiar. Um luto que humanizou as estatísticas.
+                </div>
+                <button class="btn-leia-mais" onclick="toggleT('ex-paulo', this)">+ Leia mais</button>
+            </article>
+
+            <article class="bloco-luto">
+                <span class="tag-categoria">Global</span>
+                <img src="image/pandemia.png" alt="Pandemia">
+                <h3 style="margin-top: 15px;">PANDEMIA</h3>
+                <p>O luto silencioso. Um período marcado pela impossibilidade dos ritos de despedida tradicionais.</p>
+                <div class="texto-extra" id="ex-pandemia">
+                    A pandemia de 2020 foi um momento onde a dor de um era o medo de todos, exigindo processar a ausência em isolamento.
+                </div>
+                <button class="btn-leia-mais" onclick="toggleT('ex-pandemia', this)">+ Leia mais</button>
+            </article>
+
+            <article class="bloco-luto">
+                <span class="tag-categoria">Nacional</span>
+                <img src="image/boatekiss.png" alt="Boate Kiss">
+                <h3 style="margin-top: 15px;">BOATE KISS</h3>
+                <p>Uma cidade em pausa. O luto de Santa Maria mostra como a ausência de muitos molda o destino de todos.</p>
+                <div class="texto-extra" id="ex-kiss">
+                    A tragédia de 2013 deixou uma ferida que exige ritos de memória e justiça para que a dor possa, enfim, descansar.
+                </div>
+                <button class="btn-leia-mais" onclick="toggleT('ex-kiss', this)">+ Leia mais</button>
+            </article>
+
+        </section>
+
+        <section class="sessao-cultura" style="background: #fff;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <img src="image/diadosmortos.png" alt="Día de Muertos">
+                <div>
+                    <h2 style="font-weight: 900; color: #114b6e; font-size: 2.5rem;">México: Onde a saudade se veste de cor</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">O México nos ensina que o luto não precisa ser silencioso. Através de altares e flores, a morte é ressignificada como uma celebração da vida que continua na memória.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="sessao-cultura" style="background: #f4f7f6;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
+                
+                <div class="card-reflexivo">
+                    <img src="image/br.png" alt="Cultura Brasileira" style="height: 350px; object-fit: cover;">
+                    <h3 style="font-weight: 900; color: #114b6e; margin-top: 20px;">Ritos e Tradições</h3>
+                    <p style="line-height: 1.8; margin-top: 10px;">Lidamos com o luto de forma social em velórios e missas, mas temos dificuldade em falar abertamente sobre o tema no dia a dia, o que gera solidão. Nossa cultura é feita de abraços em momentos críticos, mas de silêncio nos dias que seguem.</p>
+                </div>
+
+                <div class="card-reflexivo">
+                    <img src="image/indios.png" alt="Cultura Indígena" style="height: 350px; object-fit: cover;">
+                    <h3 style="font-weight: 900; color: #114b6e; margin-top: 20px;">Ancestralidade e Terra</h3>
+                    <p style="line-height: 1.8; margin-top: 10px;">Para muitos povos originários, o luto é uma conexão ancestral. A morte não é um fim, mas um retorno. Rituais coletivos celebram a memória para que o espírito encontre seu caminho, mostrando uma relação com a ausência integrada ao ciclo da natureza.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section style="padding: 80px 8%; background: #fff; border-top: 1px solid #ddd;">
+            <div style="max-width: 950px; margin: 0 auto; text-align: center;">
+                <h2 style="font-weight: 900; color: #114b6e; font-size: 2.5rem; margin-bottom: 30px;">A Ausência no Contexto Brasileiro</h2>
+                <div style="font-size: 1.2rem; line-height: 1.9; color: #333; text-align: justify;">
+                    <p>Diferente do México, o brasileiro costuma lidar com o luto de forma mais introspectiva e silenciosa. Frequentemente nos fechamos, tratando a dor como algo privado. No entanto, o Brasil é um país de contrastes: ao mesmo tempo em que nos calamos no pessoal, criamos grandes comoções nacionais por nossos ídolos.</p>
+                    
+                    <p style="margin-top: 20px;">O Museu Presença da Ausência propõe ser esse espaço de integração, ajudando a transformar a percepção da dor em uma recapitulação de memórias e novas perspectivas de vida, aceitando a dor como parte do processo.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #114b6e; color: white; padding: 40px 8%; text-align: center;">
+        <p>© 2026 Museu Presença da Ausência - Inspirado pelas conexões que aceleram a inovação.</p>
+    </footer>
+
+    <script>
+        function toggleT(id, btn) {
+            var d = document.getElementById(id);
+            if (d.style.display === "block") {
+                d.style.display = "none";
+                btn.innerText = "+ Leia mais";
+            } else {
+                d.style.display = "block";
+                btn.innerText = "- Fechar";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P.A | PRESENÇA DA AUSÊNCIA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; background-color: #fff; color: #114b6e; overflow-x: hidden; }
+
+        /* NAVEGAÇÃO ATUALIZADA */
+        .nav-caldeira {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: #fff;
+            position: fixed;
+            width: 84%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        /* Estilização da Logo e Texto solicitado */
+        .logo-container { 
+            display: flex;
+            align-items: center;
+            font-weight: 900; 
+            color: #000; 
+            font-size: 1.1rem; 
+            text-transform: uppercase; 
+        }
+        .logo-img {
+            height: 40px; /* Ajuste o tamanho conforme necessário */
+            margin-right: 15px;
+        }
+
+        .nav-links a { text-decoration: none; color: #114b6e; font-weight: 700; margin-left: 25px; font-size: 0.75rem; text-transform: uppercase; }
+
+        /* TOPO (HERO) */
+        .hero-secao {
+            height: 100vh;
+            background-color: #114b6e;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 8%;
+            box-sizing: border-box;
+        }
+        .hero-secao h1 { 
+            font-size: 5rem; 
+            line-height: 0.9; 
+            font-weight: 900; 
+            margin: 0; 
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .linha-neon { 
+            width: 250px; 
+            height: 12px; 
+            background: #00ff00; 
+            margin: 30px 0; 
+        }
+        .hero-secao .subtitulo { 
+            font-size: 1.1rem; 
+            color: #fff; 
+            max-width: 450px; 
+            line-height: 1.4;
+        }
+
+        /* DESCRIÇÃO DO MUSEU */
+        .intro-museu {
+            background-color: #fff;
+            color: #114b6e;
+            padding: 100px 8%;
+        }
+        .intro-museu h2 { font-weight: 900; font-size: 2.5rem; margin-bottom: 30px; }
+        .intro-museu p {
+            max-width: 900px;
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* MAPA DO FLORESCER */
+        .secao-lutos { padding: 80px 8%; background: #f4f7f6; }
+        .secao-lutos h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 40px; }
+        
+        .grid-florescer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card-reversivel { height: 260px; perspective: 1000px; cursor: pointer; }
+        .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.8s; transform-style: preserve-3d; }
+        .card-reversivel:hover .card-inner { transform: rotateY(180deg); }
+        .face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; padding: 25px; border-radius: 4px; box-sizing: border-box; }
+        
+        .frente { background: #fff; border: 1px solid #ddd; }
+        .verso { background: #114b6e; color: #00ff00; transform: rotateY(180deg); text-align: center; }
+        .card-reversivel:nth-child(even) .verso { background: #00ff00; color: #114b6e; }
+
+        .frente h3 { font-size: 1rem; font-weight: 900; margin-bottom: 10px; text-transform: uppercase; }
+        .frente p { font-size: 0.85rem; color: #666; line-height: 1.4; }
+        .verso h4 { font-size: 0.7rem; text-transform: uppercase; color: #fff; margin-bottom: 10px; opacity: 0.8; }
+        .card-reversivel:nth-child(even) .verso h4 { color: #114b6e; }
+        .verso p { font-size: 1.1rem; font-weight: 900; margin: 0; }
+
+        /* LOCALIZAÇÃO */
+        .secao-mapa { 
+            padding: 100px 8%; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 80px; 
+            align-items: center; 
+            background: #fff;
+        }
+        .img-mapa { width: 100%; box-shadow: 20px 20px 0px #00ff00; }
+
+        /* RODAPÉ */
+        .footer-apoio { 
+            background-color: #012a4a; 
+            color: white; 
+            padding: 100px 8% 60px 8%; 
+        }
+        .grid-apoio { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        .footer-apoio h3 { font-size: 1.8rem; font-weight: 900; margin-bottom: 25px; text-transform: uppercase; }
+        .footer-apoio p { font-size: 1rem; line-height: 1.6; opacity: 0.9; }
+        
+        .btn-contribuir { 
+            background-color: #00ff00; 
+            color: #000; 
+            padding: 18px 35px; 
+            font-weight: 900; 
+            text-decoration: none; 
+            display: inline-block;
+            margin-top: 25px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-caldeira">
+    <div class="logo-container">
+        <img src="image/logo.png" alt="Logo" class="logo-img">
+        MUSEU : PRESENÇA DA AUSÊNCIA
+    </div>
+    
+    <div class="nav-links">
+        <a href="index.html">O MUSEU</a>
+        <a href="luto_cultural.html">HISTÓRIAS DE AUSÊNCIA</a>
+        <a href="acervo.html">ACERVO</a>
+        <a href="apoio.html" onclick="window.location.href='apoio.html';">APOIO</a>
+    </div>
+</nav>
+
+    <main>
+        <section class="hero-secao">
+            <h1>O QUE<br>PERMANECE<br>QUANDO ALGUÉM<br>SE VAI?</h1>
+            <div class="linha-neon"></div>
+            <p class="subtitulo">Museu Presença da Ausência: Um lugar onde o silêncio também é acervo.</p>
+        </section>
+
+        <section class="intro-museu">
+            <h2>O Museu</h2>
+            <p>
+                O Museu Presença da Ausência é um espaço dedicado a acolher, refletir e dar forma às experiências de perda, ausência e transformação. O espaço propõe o luto como um processo coletivo e plural, reunindo memórias, objetos simbólicos, sons e narrativas pessoais. Mais do que explicar a dor, o museu convida à escuta e à pausa.
+            </p>
+        </section>
+
+        <section class="secao-lutos">
+    <h2>O Mapa do Florescer</h2>
+    <div class="grid-florescer">
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>O Fim da Infância</h3><p>A perda da inocência e do tempo sem nome.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Autonomia e voz própria.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Relacionamentos</h3><p>O fim de um amor ou de uma amizade próxima.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Novos modos de amar.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Sonhos Adiados</h3><p>O futuro que terá que esperar.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Paciência e novas rotas.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Mudanças de Vida</h3><p>Perda de emprego ou mudança de casa/país.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Coragem para se reinventar.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Saúde Plena</h3><p>A perda da mobilidade ou saúde física.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Resiliência e novos ritmos.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Identidade</h3><p>Deixar para trás quem você era em prol de quem é.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Identidade autêntica.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Causas e Lutas</h3><p>A perda de direitos ou recuos coletivos.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Resistência e união.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Objetos e Pets</h3><p>A perda de um animal ou relíquia afetiva.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Memória viva do afeto.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Luto por "Quases"</h3><p>A perda de algo que nem chegou a ser seu.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Aceitação e novos começos.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Mundo Conhecido</h3><p>A perda da normalidade e segurança global.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Adaptação e conexões.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Vínculos Invisíveis</h3><p>Se afastar de quem ainda está vivo.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Saúde mental e paz.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Memórias Alheias</h3><p>Não ter acesso ao conhecimento do outro.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Dever de contar a história.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Luto Antecipatório</h3><p>A dor que chega antes da partida real.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Oportunidade de amar agora.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Perder-se de si</h3><p>Desencontros com os próprios sonhos.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Liberdade de se reencontrar.</p></div>
+        </div></div>
+
+        <div class="card-reversivel"><div class="card-inner">
+            <div class="face frente"><h3>Luto de Família</h3><p>A perda de figuras centrais, raízes e do senso de lar.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Honra à ancestralidade e novos laços.</p></div>
+        </div></div>
+    </div>
+</section>
+
+        <section class="interacao-digital" style="background-color: #00ff00; color: #114b6e; padding: 60px 8%; text-align: center;">
+    <h2 style="font-weight: 900; font-size: 2.2rem; margin-bottom: 15px; text-transform: uppercase;">Experiência Digital</h2>
+    <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px auto; font-weight: 700;">
+        Escaneie o QR Code durante sua visita para interagir com o acervo invisível e deixar sua marca na memória do museu.
+    </p>
+    
+    <div style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
+        <div style="background: #fff; padding: 20px; border: 4px solid #114b6e; border-radius: 10px;">
+             <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://akethelen.github.io/Presenca_da_Ausencia/" alt="QR Code" style="width: 150px; height: 150px;">
+        </div>
+        
+        <div style="text-align: left; max-width: 400px;">
+            <p style="margin-bottom: 20px;">Você também pode acessar diretamente pelo link abaixo para participar da instalação virtual:</p>
+            <a href="https://akethelen.github.io/Presenca_da_Ausencia/" target="_blank" 
+               style="background-color: #114b6e; color: #00ff00; padding: 15px 25px; text-decoration: none; font-weight: 900; text-transform: uppercase; border-radius: 5px;">
+                Acessar Interação Online
+            </a>
+        </div>
+    </div>
+</section>
+
+        <section class="localizacao" id="onde-estamos">
+    <div class="info-mapa">
+        <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 20px;">Como Chegar</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 30px; line-height: 1.6;">
+            O Museu está sediado no <strong>Instituto Caldeira</strong>, o coração da inovação e memória industrial de Porto Alegre.
+        </p>
+        <address style="font-style: normal; line-height: 1.8;">
+            <strong style="font-size: 1.4rem; color: #114b6e;">INSTITUTO CALDEIRA</strong><br>
+            Tv. São José, 455 - Navegantes<br>
+            Porto Alegre - RS, 90240-200
+        </address>
+    </div>
+
+    <div style="position: relative;">
+        <div style="position: absolute; width: 100%; height: 100%; border-right: 15px solid #00ff00; border-bottom: 15px solid #00ff00; top: 15px; left: 15px; z-index: 1;"></div>
+        
+       <div style="position: relative;">
+    <div style="position: absolute; width: 100%; height: 100%; border-right: 15px solid #00ff00; border-bottom: 15px solid #00ff00; top: 15px; left: 15px; z-index: 1;"></div>
+    
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.549248405524!2d-51.20387642452077!3d-29.996349374948834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951979e0c5d78685%3A0x48abd738377374b3!2sInstituto%20Caldeira!5e0!3m2!1spt-BR!2sbr!4v1705300000000!5m2!1spt-BR!2sbr" 
+        width="100%" 
+        height="450" 
+        style="border:0; position: relative; z-index: 2; background: #eee;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+</section>
+
+        <footer id="apoio" class="footer-apoio" style="background-color: #012a4a; color: white; padding: 100px 8% 60px 8%;">
+    <div class="grid-apoio" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px;">
+        
+        <div class="bloco-ajuda">
+            <h3 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 25px; color: #fff;">AJUDA PROFISSIONAL</h3>
+            <p style="margin-bottom: 20px; opacity: 0.9;">O luto, embora íntimo, nunca deve ser solitário. Se você precisa de suporte, procure ajuda especializada.</p>
+            
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 20px;">
+                    <strong style="color: #00ff00;">• CVV (188)</strong><br>
+                    <span style="font-size: 0.9rem;">Atendimento gratuito e sigiloso 24h para apoio emocional.</span>
+                </li>
+                <li style="margin-bottom: 20px;">
+                    <strong style="color: #00ff00;">• SOCIAL PSICO AFRO</strong><br>
+                    <span style="font-size: 0.9rem;">Plataforma on-line com foco em acessibilidade e qualidade de vida através de psicólogos regularizados.</span><br>
+                    <a href="https://socialpsicoafro.com.br/psicologos" target="_blank" style="color: #00ff00; font-size: 0.8rem; text-decoration: underline;">Acessar Projeto Social</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bloco-doacoes">
+            <h3 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 25px; color: #fff;">DOAÇÕES</h3>
+            <p style="margin-bottom: 20px; opacity: 0.9;">Ajude o Museu Presença da Ausência a continuar acolhendo histórias. Sua contribuição mantém viva a memória coletiva.</p>
+            
+            <p style="font-size: 0.9rem; margin-bottom: 25px;">
+                Recebemos roupas e brinquedos para instituições como <strong>SPAAN</strong>, <strong>Pão dos Pobres</strong> e <strong>Exército da Salvação</strong>.
+            </p>
+
+            <a href="doacoes.html" class="btn-contribuir" style="background-color: #00ff00; color: #000; padding: 18px 35px; font-weight: 900; text-decoration: none; display: inline-block; text-transform: uppercase;">
+                QUERO CONTRIBUIR
+            </a>
+        </div>
+    </div>
+    
+    <p style="text-align: center; margin-top: 80px; opacity: 0.5; font-size: 0.8rem;">
+        © 2026 Museu Presença da Ausência - Um museu para todos.
+    </p>
+</footer>
+    </main>
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-br"> 

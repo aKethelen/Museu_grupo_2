@@ -1,0 +1,107 @@
+:root {
+    --azul-fundo: #0c4a6e; /* Azul profundo conforme imagem */
+    --verde-neon: #00ff41;
+    --branco: #ffffff;
+    --preto: #000000;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--preto);
+}
+
+/* Header/Menu */
+.nav-caldeira {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #fff;
+}
+
+/* Adicione isso dentro do <style> de cada página */
+.logo-container { 
+    display: flex;
+    align-items: center;
+    font-weight: 900; 
+    color: #000; 
+    font-size: 1.1rem; 
+    text-transform: uppercase; 
+}
+
+.logo-img {
+    height: 40px; 
+    margin-right: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-left: 20px;
+}
+.hero-banner {
+    background-color: #114b6e; /* Azul sólido escuro conforme a imagem */
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    color: #ffffff;
+}
+
+.hero-banner h1 {
+    font-size: 5rem; /* Fonte bem grande */
+    font-weight: 900;
+    line-height: 0.9;
+    margin: 0;
+}
+
+.linha-destaque {
+    width: 350px;
+    height: 12px;
+    background-color: #00ff00; /* Verde neon do Caldeira */
+    margin: 25px 0;
+}
+
+.hero-sub {
+    font-size: 1.2rem;
+    max-width: 500px;
+    font-weight: 400;
+}
+
+/* Seção de Conteúdo Clean */
+.content-section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.obra-box {
+    display: flex;
+    gap: 40px;
+    background: #f8fafc;
+    padding: 40px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.obra-box img {
+    width: 45%;
+    border-radius: 4px;
+}
+
+.frase-destaque {
+    background: var(--azul-fundo);
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-align: center;
+}
+
