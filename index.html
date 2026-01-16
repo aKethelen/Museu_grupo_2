@@ -59,7 +59,7 @@
         .linha-neon { 
             width: 250px; 
             height: 12px; 
-            background: #00ff00; 
+            background: #a9d6e5; 
             margin: 30px 0; 
         }
         .hero-secao .subtitulo { 
@@ -99,8 +99,8 @@
         .face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; padding: 25px; border-radius: 4px; box-sizing: border-box; }
         
         .frente { background: #fff; border: 1px solid #ddd; }
-        .verso { background: #114b6e; color: #00ff00; transform: rotateY(180deg); text-align: center; }
-        .card-reversivel:nth-child(even) .verso { background: #00ff00; color: #114b6e; }
+        .verso { background: #114b6e; color: #a9d6e5; transform: rotateY(180deg); text-align: center; }
+        .card-reversivel:nth-child(even) .verso { background: #a9d6e5; color: #114b6e; }
 
         .frente h3 { font-size: 1rem; font-weight: 900; margin-bottom: 10px; text-transform: uppercase; }
         .frente p { font-size: 0.85rem; color: #666; line-height: 1.4; }
@@ -117,7 +117,7 @@
             align-items: center; 
             background: #fff;
         }
-        .img-mapa { width: 100%; box-shadow: 20px 20px 0px #00ff00; }
+        .img-mapa { width: 100%; box-shadow: 20px 20px 0px #a9d6e5; }
 
         /* RODAPÉ */
         .footer-apoio { 
@@ -130,7 +130,7 @@
         .footer-apoio p { font-size: 1rem; line-height: 1.6; opacity: 0.9; }
         
         .btn-contribuir { 
-            background-color: #00ff00; 
+            background-color: #a9d6e5; 
             color: #000; 
             padding: 18px 35px; 
             font-weight: 900; 
@@ -139,6 +139,67 @@
             margin-top: 25px;
             text-transform: uppercase;
         }
+        
+    /* --- CÓDIGO PARA PC (BASE) --- */
+    body { font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; background-color: #fff; color: #114b6e; overflow-x: hidden; width: 100%; }
+
+    .nav-caldeira {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 8%;
+        background: #fff;
+        position: fixed;
+        width: 100%; /* Ajustado de 84% para 100% para não quebrar */
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+
+    .hero-secao {
+        height: 100vh;
+        background-color: #114b6e;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 8%;
+        box-sizing: border-box;
+    }
+
+    .hero-secao h1 { font-size: 5rem; line-height: 0.9; font-weight: 900; margin: 0; color: #fff; text-transform: uppercase; }
+    
+    .secao-mapa, .grid-apoio { 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 80px; 
+        align-items: center; 
+    }
+
+    /* --- CÓDIGO EXCLUSIVO PARA CELULAR --- */
+    @media (max-width: 768px) {
+        .nav-caldeira { 
+            flex-direction: column; 
+            padding: 15px 5%; 
+        }
+        .nav-links { 
+            margin-top: 15px; 
+            margin-left: 0; 
+            display: flex; 
+            gap: 10px; 
+        }
+        .nav-links a { margin: 0; font-size: 0.65rem; }
+        
+        .hero-secao h1 { font-size: 2.5rem; } /* Diminui o título para caber na tela */
+        
+        .secao-mapa, .grid-apoio { 
+            grid-template-columns: 1fr; /* Transforma 2 colunas em 1 */
+            gap: 40px; 
+            padding: 50px 8%;
+        }
+        
+        .img-mapa { box-shadow: 10px 10px 0px #a9d6e5; } /* Sombra menor no celular */
+    }
     </style>
 </head>
 <body>
@@ -201,7 +262,7 @@
 
         <div class="card-reversivel"><div class="card-inner">
             <div class="face frente"><h3>Identidade</h3><p>Deixar para trás quem você era em prol de quem é.</p></div>
-            <div class="face verso"><h4>Ressignificado</h4><p>Identidade autêntica.</p></div>
+            <div class="face verso"><h4>Ressignificado</h4><p>Liberdade de se reencontrar.</p></div>
         </div></div>
 
         <div class="card-reversivel"><div class="card-inner">
@@ -240,35 +301,110 @@
         </div></div>
 
         <div class="card-reversivel"><div class="card-inner">
-            <div class="face frente"><h3>Perder-se de si</h3><p>Desencontros com os próprios sonhos.</p></div>
-            <div class="face verso"><h4>Ressignificado</h4><p>Liberdade de se reencontrar.</p></div>
-        </div></div>
-
-        <div class="card-reversivel"><div class="card-inner">
             <div class="face frente"><h3>Luto de Família</h3><p>A perda de figuras centrais, raízes e do senso de lar.</p></div>
             <div class="face verso"><h4>Ressignificado</h4><p>Honra à ancestralidade e novos laços.</p></div>
         </div></div>
+
+        <div class="card-reversivel">
+            <div class="card-inner">
+                <div class="face frente" style="border: 2px solid #a9d6e5;">
+                    <h3>Sua Ausência</h3>
+                    <p>Um espaço em aberto para o luto que ainda não foi nomeado.</p>
+                </div>
+                <div class="face verso" style="background: #a9d6e5; color: #114b6e;">
+                    <h4 style="color: #114b6e;">Ressignificado</h4>
+                    <p>A presença que você escolher criar.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
-        <section class="interacao-digital" style="background-color: #00ff00; color: #114b6e; padding: 60px 8%; text-align: center;">
+<section style="padding: 100px 8%; background: #f4f7f6;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+        
+        <div>
+            <h2 style="font-weight: 900; font-size: 2.2rem; text-transform: uppercase;">
+                <span style="color: #114b6e;">Novas Formas de</span><br>
+                <span style="color: #a9d6e5;">Ressignificar</span>
+            </h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 20px; color: #114b6e; font-weight: 700;">
+                O luto coletivo é uma construção constante. Compartilhe conosco figuras ou eventos que marcaram sua história. Nossa equipe analisará sua contribuição para futuras atualizações em nosso acervo.
+            </p>
+        </div>
+
+        <div style="background: #114b6e; padding: 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+            <h3 style="color: #fff; font-weight: 900; text-transform: uppercase; margin-top: 0; margin-bottom: 20px; font-size: 1.1rem;">
+                O que você gostaria de ver por aqui?
+            </h3>
+            
+            <form style="display: flex; flex-direction: column; gap: 15px;">
+                <label style="color: #a9d6e5; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Nome da figura ou evento</label>
+                <input type="text" placeholder="Digite aqui..." 
+                       style="padding: 12px; border: none; border-radius: 4px; font-family: 'Montserrat'; background-color: #fff;">
+                
+                <label style="color: #a9d6e5; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Como ressignificar?</label>
+                <textarea placeholder="Conte-nos brevemente a importância e como transformar essa ausência em presença..." rows="4" 
+                          style="padding: 12px; border: none; border-radius: 4px; font-family: 'Montserrat'; background-color: #fff; resize: none;"></textarea>
+                
+                <button type="button" 
+        onclick="alert('Obrigado! Sua sugestão foi recebida e será analisada por nossa curadoria com muito carinho.')"
+        style="background-color: #a9d6e5; color: #114b6e; border: none; padding: 15px; font-weight: 900; text-transform: uppercase; cursor: pointer; border-radius: 4px; margin-top: 10px;">
+    Enviar para análise
+</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+        <section class="interacao-digital" style="background-color: #a9d6e5; color: #114b6e; padding: 60px 8%; text-align: center;">
     <h2 style="font-weight: 900; font-size: 2.2rem; margin-bottom: 15px; text-transform: uppercase;">Experiência Digital</h2>
     <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px auto; font-weight: 700;">
-        Escaneie o QR Code durante sua visita para interagir com o acervo invisível e deixar sua marca na memória do museu.
+        Escaneie os QR Codes durante sua visita para interagir com o acervo invisível e deixar sua marca na memória do museu.
     </p>
     
-    <div style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
-        <div style="background: #fff; padding: 20px; border: 4px solid #114b6e; border-radius: 10px;">
-             <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://akethelen.github.io/Presenca_da_Ausencia/" alt="QR Code" style="width: 150px; height: 150px;">
-        </div>
+    <div style="display: flex; justify-content: center; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
         
-        <div style="text-align: left; max-width: 400px;">
-            <p style="margin-bottom: 20px;">Você também pode acessar diretamente pelo link abaixo para participar da instalação virtual:</p>
+        <div style="display: flex; flex-direction: column; align-items: center; width: 200px;">
+            <div style="background: #fff; padding: 15px; border-radius: 12px; border: 4px solid #114b6e; width: 180px; height: 180px; display: flex; align-items: center; justify-content: center;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://akethelen.github.io/Presenca_da_Ausencia/" alt="QR Code Acervo" style="width: 100%;">
+            </div>
+            <p style="font-size: 0.9rem; font-weight: 900; text-transform: uppercase; margin-top: 15px; letter-spacing: 1px;">Acervo Invisível</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center; width: 200px;">
+            <div style="background: #fff; padding: 15px; border-radius: 12px; border: 4px solid #114b6e; width: 180px; height: 180px; display: flex; align-items: center; justify-content: center;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://akethelen.github.io/Presenca_da_Ausencia/universo.html" alt="QR Code Universo" style="width: 100%;">
+            </div>
+            <p style="font-size: 0.9rem; font-weight: 900; text-transform: uppercase; margin-top: 15px; letter-spacing: 1px;">Sua estrela no universo</p>
+        </div>
+
+    </div>
+
+    <div style="margin-top: 40px;">
+        <p style="font-weight: 700; margin-bottom: 20px;">Você também pode participar da instalação virtual pelos links abaixo:</p>
+        
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
             <a href="https://akethelen.github.io/Presenca_da_Ausencia/" target="_blank" 
-               style="background-color: #114b6e; color: #00ff00; padding: 15px 25px; text-decoration: none; font-weight: 900; text-transform: uppercase; border-radius: 5px;">
-                Acessar Interação Online
+               style="background-color: #114b6e; color: #a9d6e5; padding: 15px 25px; text-decoration: none; font-weight: 900; text-transform: uppercase; border-radius: 8px; font-size: 0.9rem;">
+                Escrever no Acervo
+            </a>
+            
+            <a href="https://akethelen.github.io/Presenca_da_Ausencia/universo.html" target="_blank" 
+               style="background-color: #114b6e; color: #a9d6e5; padding: 15px 25px; text-decoration: none; font-weight: 900; text-transform: uppercase; border-radius: 8px; font-size: 0.9rem;">
+                Ver o Céu de Estrelas
             </a>
         </div>
+    </div>
+</section>
+
+    <div style="margin-top: 40px;">
+        <p style="margin-bottom: 20px;">Você também pode acessar diretamente para participar da instalação virtual:</p>
+        <a href="https://akethelen.github.io/Presenca_da_Ausencia/" target="_blank" 
+           style="background-color: #114b6e; color: #a9d6e5; padding: 15px 25px; text-decoration: none; font-weight: 900; text-transform: uppercase; border-radius: 5px; display: inline-block;">
+            Acessar Interação Online
+        </a>
     </div>
 </section>
 
@@ -286,10 +422,10 @@
     </div>
 
     <div style="position: relative;">
-        <div style="position: absolute; width: 100%; height: 100%; border-right: 15px solid #00ff00; border-bottom: 15px solid #00ff00; top: 15px; left: 15px; z-index: 1;"></div>
+        <div style="position: absolute; width: 100%; height: 100%; border-right: 15px solid #a9d6e5; border-bottom: 15px solid #a9d6e5; top: 15px; left: 15px; z-index: 1;"></div>
         
        <div style="position: relative;">
-    <div style="position: absolute; width: 100%; height: 100%; border-right: 15px solid #00ff00; border-bottom: 15px solid #00ff00; top: 15px; left: 15px; z-index: 1;"></div>
+    <div style="position: absolute; width: 100%; height: 100%; border-right: 15px solid #a9d6e5; border-bottom: 15px solid #a9d6e5; top: 15px; left: 15px; z-index: 1;"></div>
     
     <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.549248405524!2d-51.20387642452077!3d-29.996349374948834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951979e0c5d78685%3A0x48abd738377374b3!2sInstituto%20Caldeira!5e0!3m2!1spt-BR!2sbr!4v1705300000000!5m2!1spt-BR!2sbr" 
@@ -312,13 +448,13 @@
             
             <ul style="list-style: none; padding: 0;">
                 <li style="margin-bottom: 20px;">
-                    <strong style="color: #00ff00;">• CVV (188)</strong><br>
+                    <strong style="color: #a9d6e5;">• CVV (188)</strong><br>
                     <span style="font-size: 0.9rem;">Atendimento gratuito e sigiloso 24h para apoio emocional.</span>
                 </li>
                 <li style="margin-bottom: 20px;">
-                    <strong style="color: #00ff00;">• SOCIAL PSICO AFRO</strong><br>
+                    <strong style="color: #a9d6e5;">• SOCIAL PSICO AFRO</strong><br>
                     <span style="font-size: 0.9rem;">Plataforma on-line com foco em acessibilidade e qualidade de vida através de psicólogos regularizados.</span><br>
-                    <a href="https://socialpsicoafro.com.br/psicologos" target="_blank" style="color: #00ff00; font-size: 0.8rem; text-decoration: underline;">Acessar Projeto Social</a>
+                    <a href="https://socialpsicoafro.com.br/psicologos" target="_blank" style="color: #a9d6e5; font-size: 0.8rem; text-decoration: underline;">Acessar Projeto Social</a>
                 </li>
             </ul>
         </div>
@@ -331,7 +467,7 @@
                 Recebemos roupas e brinquedos para instituições como <strong>SPAAN</strong>, <strong>Pão dos Pobres</strong> e <strong>Exército da Salvação</strong>.
             </p>
 
-            <a href="doacoes.html" class="btn-contribuir" style="background-color: #00ff00; color: #000; padding: 18px 35px; font-weight: 900; text-decoration: none; display: inline-block; text-transform: uppercase;">
+            <a href="doacoes.html" class="btn-contribuir" style="background-color: #a9d6e5; color: #000; padding: 18px 35px; font-weight: 900; text-decoration: none; display: inline-block; text-transform: uppercase;">
                 QUERO CONTRIBUIR
             </a>
         </div>
@@ -344,4 +480,4 @@
     </main>
 </body>
 </html><!DOCTYPE html>
-<html lang="pt-br"> 
+<html lang="pt-br">

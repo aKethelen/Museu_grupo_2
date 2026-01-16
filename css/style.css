@@ -18,9 +18,13 @@ body {
     align-items: center;
     padding: 20px 8%;
     background: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
 }
 
-/* Adicione isso dentro do <style> de cada página */
 .logo-container { 
     display: flex;
     align-items: center;
@@ -42,11 +46,14 @@ body {
     font-size: 0.8rem;
     margin-left: 20px;
 }
+
+/* Banner Principal */
 .hero-banner {
-    background-color: #114b6e; /* Azul sólido escuro conforme a imagem */
+    background-color: #114b6e; /* Azul sólido escuro */
     height: 85vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     padding: 0 8%;
     color: #ffffff;
 }
@@ -61,7 +68,7 @@ body {
 .linha-destaque {
     width: 350px;
     height: 12px;
-    background-color: #00ff00; /* Verde neon do Caldeira */
+    background-color: var(--verde-neon); /* Verde neon do Caldeira */
     margin: 25px 0;
 }
 
@@ -105,3 +112,7 @@ body {
     text-align: center;
 }
 
+/* Espaçador para o conteúdo não subir na Nav */
+main {
+    padding-top: 80px;
+}
